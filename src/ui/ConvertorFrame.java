@@ -219,7 +219,7 @@ public class ConvertorFrame extends JFrame implements ActionListener, FocusListe
                 ConvertorFrame.this.taInfo.append("\n");
             }
         };
-        converController = ConvertController.getConvertController();
+        converController = ConvertController.getInstence();
         converController.setLogger(logger);
         initFrame();
         setDefaultCloseOperation(3);

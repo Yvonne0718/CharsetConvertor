@@ -10,8 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.filechooser.FileFilter;
 
 import controller.ConvertController;
@@ -28,9 +28,11 @@ import ui.ConvertorFrame;
 public class ChooseFileListener implements ActionListener {
     private ConvertorFrame frame;
     private ConvertController converController;
-    public ChooseFileListener(ConvertController converController, ConvertorFrame frame){
+    private JButton button;
+    public ChooseFileListener(ConvertorFrame frame,Object button){
         this.frame = frame;
-        this.converController = converController;
+        this.button = (JButton) button;
+        this.converController = ConvertController.getInstence();
     }
     /* 
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)

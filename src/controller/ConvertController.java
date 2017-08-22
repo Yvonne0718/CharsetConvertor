@@ -2,9 +2,7 @@ package controller;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import convertor.Convertor;
 import filter.FileFilter;
@@ -50,14 +48,13 @@ public class ConvertController {
 	
 	private FileFilter filter = new FileFilter();
 	private Convertor convertor = new Convertor();
-	
+	private static ConvertController convertController = new ConvertController();
 	private ConvertController(){
 		
 	}
 	
-	public static ConvertController getConvertController() {
-		return new ConvertController();
-		
+	public static ConvertController getInstence() {
+		return convertController;
 	}
 	
 	public boolean query(boolean islog) {

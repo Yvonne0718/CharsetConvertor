@@ -9,6 +9,8 @@ package listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JMenuItem;
+
 /**
  *
  *
@@ -18,7 +20,9 @@ import java.awt.event.ActionListener;
  *
  */
 public class AboutListener implements ActionListener {
-
+    
+    private JMenuItem item;
+//    private ConvertController convertController;
     /* 
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
      */

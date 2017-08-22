@@ -9,6 +9,11 @@ package listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JComboBox;
+
+import controller.ConvertController;
+import ui.ConvertorFrame;
+
 /**
  *
  *
@@ -19,13 +24,23 @@ import java.awt.event.ActionListener;
  */
 public class CharsetListener implements ActionListener {
 
+    private JComboBox combobox;
+    private ConvertorFrame frame;
+    private ConvertController converController;
+    /**
+     * 
+     */
+    public CharsetListener(ConvertorFrame frame, Object combobox) {
+        this.combobox = (JComboBox) combobox;
+        this.frame = frame;
+        this.converController = ConvertController.getInstence();
+    }
     /* 
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-
+        this.converController.setTgEncoding((String)this.combobox.getSelectedItem());
     }
 
 }
