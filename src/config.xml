@@ -1,40 +1,40 @@
 <convertor>
-	<frame class="ui.CovertorFrame" x="360" y="170" width="800" height="600" title="ECmotug" frameIcon="/img/motug.png">
+	<frame class="ui.CovertorFrame" x="360" y="170" width="800" height="600" id="mainFrame" title="ECmotug" frameIcon="/img/motug.png">
 		<panel class="javax.swing.JPanel" x="0" y="0" width="600" height="90" align="North" id="topPanel" >
-			<CommonContainer>
-				<JComponent  class="javax.swing.JLabel" x="10" y="15" width="60" height="30" id="tgdirlb" text="文件夹:" align="4" />
-				<JComponent  class="javax.swing.JLabel" x="10" y="55" width="60" height="30" id="adTypelb" text="过滤文件:" align="4" />
-				<JComponent  class="javax.swing.JLabel" x="180" y="55" width="60" height="30" id="tgTypelb" text="目标文件:" align="4" />
-				<JComponent  class="javax.swing.JLabel" x="490" y="15" width="80" height="30" id="tgcharsetlb" text="目标字符编码:" align="4" />
-				<JComponent  class="javax.swing.JLabel" x="365" y="55" width="60" height="30" id="hivefile" text="隐藏文件:" align="4" />
-				<JComponent  class="javax.swing.JButton" x="370" y="15" width="80" height="30" id="chooseflo" text="..." />
-				<JComponent  class="javax.swing.JButton" x="490" y="55" width="80" height="30" id="query" text="查询" />
-				<JComponent  class="javax.swing.JButton" x="580" y="55" width="150" height="30" id="enchangeStart" text="开始转换" />
-				<JComponent  class="javax.swing.JTextField" x="70" y="15" width="300" height="30" id="tgdir"/>
-				<JComponent  class="javax.swing.JTextField" x="70" y="55" width="100" height="30" id="adType"/>
-				<JComponent  class="javax.swing.JTextField" x="250" y="55" width="100" height="30" id="tgType"/>
-				<JComponent  class="javax.swing.JCheckBox" x="425" y="55" width="30" height="30" id="hivecb"/>
-				<JComponent  class="javax.swing.JComboBox" x="580" y="15" width="150" height="30" id="tgcharsetlist"/>
-			</CommonContainer>
+			<JComponent>
+				<JComponent  class="javax.swing.JButton" x="370" y="15" width="80" height="30" id="chooseflo" text="..." listener="listener.ChooseFileListener"/>
+				<JComponent  class="javax.swing.JTextField" x="70" y="15" width="300" height="30" id="tgdir" listener="listener.TgDirectoryListener"/>
+			</JComponent>
+			<JComponent  class="javax.swing.JLabel" x="10" y="15" width="60" height="30" id="tgdirlb" text="文件夹:" align="4" />
+			<JComponent  class="javax.swing.JLabel" x="10" y="55" width="60" height="30" id="adTypelb" text="过滤文件:" align="4" />
+			<JComponent  class="javax.swing.JLabel" x="180" y="55" width="60" height="30" id="tgTypelb" text="目标文件:" align="4" />
+			<JComponent  class="javax.swing.JLabel" x="490" y="15" width="80" height="30" id="tgcharsetlb" text="目标字符编码:" align="4" />
+			<JComponent  class="javax.swing.JLabel" x="365" y="55" width="60" height="30" id="hivefile" text="隐藏文件:" align="4" />
+			<JComponent  class="javax.swing.JButton" x="490" y="55" width="80" height="30" id="query" text="查询" listener="listener.QueryListener"/>
+			<JComponent  class="javax.swing.JButton" x="580" y="55" width="150" height="30" id="enchangeStart" text="开始转换" listener="listener.StartListener"/>
+			<JComponent  class="javax.swing.JTextField" x="70" y="55" width="100" height="30" id="adType" listener="listener.AdTypeListener"/>
+			<JComponent  class="javax.swing.JTextField" x="250" y="55" width="100" height="30" id="tgType" listener="listener.TgTypeListener"/>
+			<JComponent  class="javax.swing.JCheckBox" x="425" y="55" width="30" height="30" id="hivecb" listener="listener.HiveListener"/>
+			<JComponent  class="javax.swing.JComboBox" x="580" y="15" width="150" height="30" id="tgcharsetlist" listener="listener.CharsetListener"/>
 		</panel>
 		<panel class="javax.swing.JScrollPane" x="100" y="90" width="450" height="300" align="Center" id="centerPanel"/>
 	</frame>
 	
 	<Container>
 		<CommonContainer>
-			<JComponent  class="javax.swing.JLabel" x="10" y="15" width="60" height="30" id="tgdirlb" text="文件夹:" align="4" />
-			<JComponent  class="javax.swing.JLabel" x="10" y="55" width="60" height="30" id="adTypelb" text="过滤文件:" align="4" />
-			<JComponent  class="javax.swing.JLabel" x="180" y="55" width="60" height="30" id="tgTypelb" text="目标文件:" align="4" />
-			<JComponent  class="javax.swing.JLabel" x="490" y="15" width="80" height="30" id="tgcharsetlb" text="目标字符编码:" align="4" />
-			<JComponent  class="javax.swing.JLabel" x="365" y="55" width="60" height="30" id="hivefile" text="隐藏文件:" align="4" />
-			<JComponent  class="javax.swing.JButton" x="370" y="15" width="80" height="30" id="chooseflo" text="..." />
-			<JComponent  class="javax.swing.JButton" x="490" y="55" width="80" height="30" id="query" text="查询" />
-			<JComponent  class="javax.swing.JButton" x="580" y="55" width="150" height="30" id="enchangeStart" text="开始转换" />
-			<JComponent  class="javax.swing.JTextField" x="70" y="15" width="300" height="30" id="tgdir"/>
-			<JComponent  class="javax.swing.JTextField" x="70" y="55" width="100" height="30" id="adType"/>
-			<JComponent  class="javax.swing.JTextField" x="250" y="55" width="100" height="30" id="tgType"/>
-			<JComponent  class="javax.swing.JCheckBox" x="425" y="55" width="30" height="30" id="hivecb"/>
-			<JComponent  class="javax.swing.JComboBox" x="580" y="15" width="150" height="30" id="tgcharsetlist"/>
+			<JLabel  class="javax.swing.JLabel" x="10" y="15" width="60" height="30" id="tgdirlb" text="文件夹:" align="4" />
+			<JLabel  class="javax.swing.JLabel" x="10" y="55" width="60" height="30" id="adTypelb" text="过滤文件:" align="4" />
+			<JLabel  class="javax.swing.JLabel" x="180" y="55" width="60" height="30" id="tgTypelb" text="目标文件:" align="4" />
+			<JLabel  class="javax.swing.JLabel" x="490" y="15" width="80" height="30" id="tgcharsetlb" text="目标字符编码:" align="4" />
+			<JLabel  class="javax.swing.JLabel" x="365" y="55" width="60" height="30" id="hivefile" text="隐藏文件:" align="4" />
+			<JButton  class="javax.swing.JButton" x="370" y="15" width="80" height="30" id="chooseflo" text="..." listener="listener.ChooseFileListener"/>
+			<JButton  class="javax.swing.JButton" x="490" y="55" width="80" height="30" id="query" text="查询" listener="listener.QueryListener"/>
+			<JButton  class="javax.swing.JButton" x="580" y="55" width="150" height="30" id="enchangeStart" text="开始转换" listener="listener.StartListener"/>
+			<JTextField  class="javax.swing.JTextField" x="70" y="15" width="300" height="30" id="tgdir" listener="listener.TgDirectoryListener"/>
+			<JTextField  class="javax.swing.JTextField" x="70" y="55" width="100" height="30" id="adType" listener="listener.AdTypeListener"/>
+			<JTextField  class="javax.swing.JTextField" x="250" y="55" width="100" height="30" id="tgType" listener="listener.TgTypeListener"/>
+			<JBox  class="javax.swing.JCheckBox" x="425" y="55" width="30" height="30" id="hivecb" listener="listener.HiveListener"/>
+			<JBox  class="javax.swing.JComboBox" x="580" y="15" width="150" height="30" id="tgcharsetlist" listener="listener.CharsetListener"/>
 		</CommonContainer>
 		
 		

@@ -1,7 +1,8 @@
-package config.base;
+package config;
 
+import org.dom4j.Element;
 
-public class BaseComponentConfig {
+public class BaseUIConfig {
 	private String id;
 	private String classname;
 	private int x;
@@ -9,19 +10,13 @@ public class BaseComponentConfig {
 	private int width;
 	private int height;
 	
-	public BaseComponentConfig(String id,String classname,int x,int y,int width,int height){
-//		this.id = element.attributeValue("id");
-//		this.classname = element.attributeValue("class");
-//		this.x = Integer.parseInt(element.attributeValue("x"));
-//		this.y = Integer.parseInt(element.attributeValue("y"));
-//		this.width = Integer.parseInt(element.attributeValue("width"));
-//		this.height = Integer.parseInt(element.attributeValue("height"));
-		this.id = id;
-		this.classname = classname;
-		this.x = x;
-		this.y = y;
-		this.width = width	;
-		this.height = height;
+	public BaseUIConfig(Element element){
+	    this.id = element.attribute("id").getText();
+	    this.classname = element.attribute("class").getText();
+	    this.x = Integer.parseInt(element.attribute("x").getText());
+	    this.y = Integer.parseInt(element.attribute("y").getText());
+	    this.width = Integer.parseInt(element.attribute("width").getText());
+	    this.height = Integer.parseInt(element.attribute("height").getText());
 	}
 	public String getClassname() {
 		return classname;

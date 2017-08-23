@@ -48,6 +48,10 @@ public class ConvertController {
 	
 	private FileFilter filter = new FileFilter();
 	private Convertor convertor = new Convertor();
+
+    public String tgdir_temp="";
+    public String tgtype_temp = "";
+    public String adtype_temp = "";
 	private static ConvertController convertController = new ConvertController();
 	private ConvertController(){
 		

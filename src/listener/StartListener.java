@@ -40,9 +40,9 @@ public class StartListener implements ActionListener{
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.frame.checkAdtype();
-        this.frame.checkTgdir();
-        this.frame.checkTgtype();
+//        this.frame.checkAdtype();
+//        this.frame.checkTgdir();
+//        this.frame.checkTgtype();
         this.converController.encodingConvertStart();
         
     }

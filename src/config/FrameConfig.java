@@ -4,40 +4,20 @@ import java.util.List;
 
 import org.dom4j.Element;
 
-import config.base.BaseComponentConfig;
-import config.base.PanelConfig;
-
-public class FrameConfig extends BaseComponentConfig {
+public class FrameConfig extends BaseUIConfig {
 	private String title;
 	private String frameIcon;
 	private List<PanelConfig> panelsConfig;
 	
 	@SuppressWarnings("unchecked")
 	public FrameConfig(Element frame) {
-		
-		super(
-				frame.attributeValue("id"),
-				frame.attributeValue("classname"),
-				Integer.parseInt(frame.attributeValue("x")),
-				Integer.parseInt(frame.attributeValue("y")),
-				Integer.parseInt(frame.attributeValue("width")),
-				Integer.parseInt(frame.attributeValue("height"))
-			  );
-		
+		super(frame);
 		this.title = frame.attributeValue("title");
 		this.frameIcon = frame.attributeValue("frameIcon");
 		
-		List<Element> panelelements = frame.selectNodes("./panel");
+		List<Element> panelelements = frame.elements("panel");
 		for(Element panel : panelelements){
-			PanelConfig single = new PanelConfig(
-					panel.attributeValue("id"),
-					panel.attributeValue("classname"),
-					Integer.parseInt(panel.attributeValue("x")),
-					Integer.parseInt(panel.attributeValue("y")),
-					Integer.parseInt(panel.attributeValue("width")),
-					Integer.parseInt(panel.attributeValue("height")),
-					panel.attributeValue("align")
-					);
+			PanelConfig single = new PanelConfig(panel);
 			this.panelsConfig.add(single);
 		}
 	}

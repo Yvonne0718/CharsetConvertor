@@ -12,6 +12,7 @@ import java.io.File;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileFilter;
 
 import controller.ConvertController;
@@ -29,9 +30,11 @@ public class ChooseFileListener implements ActionListener {
     private ConvertorFrame frame;
     private ConvertController converController;
     private JButton button;
-    public ChooseFileListener(Object frame,Object button){
+    private JTextField field;
+    public ChooseFileListener(Object frame,Object button,JTextField field){
         this.frame = (ConvertorFrame) frame;
         this.button = (JButton) button;
+        this.field = field;
         this.converController = ConvertController.getInstence();
     }
     /* 
@@ -57,8 +60,10 @@ public class ChooseFileListener implements ActionListener {
                         : files[0].getParent();
             else
                 tgdirpath = files[0].getParent();
-            this.frame.tgdir.setText(tgdirpath);
-            this.frame.tgdir_temp = this.frame.tgdir.getText();
+//            this.frame.tgdir.setText(tgdirpath);
+//            this.frame.tgdir_temp = this.frame.tgdir.getText();
+            this.field.setText(tgdirpath);
+            this.converController.tgdir_temp = tgdirpath;
 
         }
     }

@@ -1,17 +1,85 @@
-package config.base;
+package config;
 
-public class PanelConfig extends BaseComponentConfig{
+import java.util.List;
 
-	private String align;
+import org.dom4j.Element;
+
+public class PanelConfig extends BaseUIConfig{
+    private String align;
+//    private List<LabelConfig> labelsConfig;
+//    private List<BoxConfig> boxsConfig;
+//	private List<ButtonConfig> buttonsConfig;
+//	private List<TextFieldConfig> textFieldsConfig;
+    private List<ComponentConfig> componentConfig;
 	
-	public PanelConfig(String id, String classname, int x, int y, int width, int height,String align) {
-		super(id, classname, x, y, width, height);
-		this.align = align;
+	@SuppressWarnings("unchecked")
+    public PanelConfig(Element panel) {
+	    super(panel);
+	    this.align = panel.attributeValue("align");
+	    List<Element> components = panel.elements("JComponent");
+	    for(Element i : components){
+	        componentConfig.add(new ComponentConfig(i));
+	    }
+//	    List<Element> labels = panel.elements("JLabel");
+//	    List<Element> buttons = panel.elements("JButton");
+//	    List<Element> testFields = panel.elements("JTextField");
+//	    List<Element> boxs = panel.elements("JBox");
+//	    for(Element i:labels){
+//	        labelsConfig.add(new LabelConfig(i));
+//	    }
+//	    for(Element i:buttons){
+//	        buttonsConfig.add(new ButtonConfig(i));
+//	    }
+//	    for(Element i:testFields){
+//	        textFieldsConfig.add(new TextFieldConfig(i));
+//	    }
+//	    for(Element i:boxs){
+//	        boxsConfig.add(new BoxConfig(i));
+//	    }
 	}
 
 	public String getAlign() {
 		return align;
 	}
+
+    /**
+     * @return the componentConfig
+     */
+    public List<ComponentConfig> getComponentConfig() {
+        return componentConfig;
+    }
+	
+	
+//
+//    /**
+//     * @return the labelsConfig
+//     */
+//    public List<LabelConfig> getLabelsConfig() {
+//        return labelsConfig;
+//    }
+//
+//    /**
+//     * @return the boxsConfig
+//     */
+//    public List<BoxConfig> getBoxsConfig() {
+//        return boxsConfig;
+//    }
+//
+//    /**
+//     * @return the buttonsConfig
+//     */
+//    public List<ButtonConfig> getButtonsConfig() {
+//        return buttonsConfig;
+//    }
+//
+//    /**
+//     * @return the textFieldsConfig
+//     */
+//    public List<TextFieldConfig> getTextFieldsConfig() {
+//        return textFieldsConfig;
+//    }
+//	
+	
 	
 	
 }
