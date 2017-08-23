@@ -6,6 +6,14 @@
  */
 package listener;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JCheckBox;
+
+import controller.ConvertController;
+import ui.ConvertorFrame;
+
 /**
  *
  *
@@ -14,6 +22,21 @@ package listener;
  * @version 1.0
  *
  */
-public class HiveListener {
-
+public class HiveListener implements ActionListener{
+    private ConvertorFrame frame;
+    private ConvertController converController;
+    private JCheckBox box;
+    
+    public HiveListener(Object frame, Object box){
+        this.frame = (ConvertorFrame) frame;
+        this.box = (JCheckBox) box;
+        this.converController = ConvertController.getInstence();
+    }
+    /* 
+     * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+     */
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        this.converController.setHive(this.box.isSelected());
+    }
 }

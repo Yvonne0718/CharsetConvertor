@@ -9,6 +9,11 @@ package listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JMenuItem;
+
+import controller.ConvertController;
+import ui.ConvertorFrame;
+
 /**
  *
  *
@@ -18,7 +23,15 @@ import java.awt.event.ActionListener;
  *
  */
 public class ExitListener implements ActionListener{
-
+    private JMenuItem item;
+    private ConvertorFrame frame;
+//    private ConvertController converController;
+    
+    public ExitListener(Object frame, JMenuItem item) {
+        this.frame = (ConvertorFrame) frame;
+        this.item = item;
+//        this.converController = ConvertController.getInstence();
+    }
     /* 
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
      */

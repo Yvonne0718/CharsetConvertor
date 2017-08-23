@@ -29,8 +29,8 @@ public class ChooseFileListener implements ActionListener {
     private ConvertorFrame frame;
     private ConvertController converController;
     private JButton button;
-    public ChooseFileListener(ConvertorFrame frame,Object button){
-        this.frame = frame;
+    public ChooseFileListener(Object frame,Object button){
+        this.frame = (ConvertorFrame) frame;
         this.button = (JButton) button;
         this.converController = ConvertController.getInstence();
     }

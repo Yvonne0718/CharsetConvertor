@@ -259,21 +259,21 @@ public class ConvertorFrame extends JFrame implements ActionListener, FocusListe
         }
     }
 
-    private void checkTgdir() {
+    public void checkTgdir() {
         if (!this.tgdir.getText().equals(this.tgdir_temp)) {
             this.tgdir_temp = this.tgdir.getText();
             this.converController.setTempFile(this.tgdir.getText());
         }
     }
 
-    private void checkAdtype() {
+    public void checkAdtype() {
         if (!this.adType.getText().equals(this.adtype_temp)) {
             this.adtype_temp = this.adType.getText();
             this.converController.setAdType(this.adType.getText());
         }
     }
 
-    private void checkTgtype() {
+    public void checkTgtype() {
         if (!this.tgType.getText().equals(this.tgtype_temp)) {
             this.tgtype_temp = this.tgType.getText();
             this.converController.setTgType(this.tgType.getText());

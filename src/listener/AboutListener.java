@@ -11,6 +11,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JMenuItem;
 
+import controller.ConvertController;
+import ui.ConvertorFrame;
+
 /**
  *
  *
@@ -22,7 +25,13 @@ import javax.swing.JMenuItem;
 public class AboutListener implements ActionListener {
     
     private JMenuItem item;
-//    private ConvertController convertController;
+    private ConvertorFrame frame;
+    private ConvertController converController;
+
+    public AboutListener(Object frame, Object item) {
+            this.frame = (ConvertorFrame) frame;
+            this.item = (JMenuItem) item;
+    }
     /* 
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
      */

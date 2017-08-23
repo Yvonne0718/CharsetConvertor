@@ -30,9 +30,9 @@ public class CharsetListener implements ActionListener {
     /**
      * 
      */
-    public CharsetListener(ConvertorFrame frame, Object combobox) {
+    public CharsetListener(Object frame, Object combobox) {
         this.combobox = (JComboBox) combobox;
-        this.frame = frame;
+        this.frame = (ConvertorFrame) frame;
         this.converController = ConvertController.getInstence();
     }
     /* 
