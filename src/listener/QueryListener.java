@@ -23,16 +23,16 @@ import ui.ConvertorFrame;
  *
  */
 public class QueryListener implements ActionListener{
-    private ConvertorFrame frame;
+//    private ConvertorFrame frame;
     private ConvertController converController;
-    private JButton button;
+//    private JButton button;
     
     /**
      * 
      */
-    public QueryListener(Object frame, Object button) {
-        this.frame = (ConvertorFrame) frame;
-        this.button = (JButton) button;
+    public QueryListener() {
+//        this.frame = (ConvertorFrame) frame;
+//        this.button = (JButton) button;
     }
     /* 
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)

@@ -14,6 +14,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.List;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
@@ -216,26 +217,15 @@ public class ConvertorFrame extends JFrame{
         setBounds(config.getX(), config.getY(), config.getWidth(), config.getWidth());
         URL url = ConvertorFrame.class.getResource(config.getFrameIcon());
         setIconImage(ImageIO.read(url));
-        List<PanelConfig> panels = config.getPanelsConfig();
-        for(PanelConfig i: panels){
-            Panel panel = (Panel) Class.forName(i.getClassname()).newInstance();
-            panel.setPreferredSize(new Dimension(i.getWidth(),i.getHeight()));
-//            if(i.getLabelsConfig() != null){
-//                initJLabels(i.getLabelsConfig(),panel);
-//            }
-//            if(i.getBoxsConfig() != null){
-//                initJBoxs(i.getBoxsConfig(),panel);
-//            }
-//            if(i.getButtonsConfig() != null){
-//                initJButtons(i.getButtonsConfig(),panel);
-//            }
-//            if(i.getTextFieldsConfig() != null){
-//                initJTextFields(i.getTextFieldsConfig(),panel);
-//            }
-            for(ComponentConfig j:i.getComponentConfig()){
-                initComponent(j,panel);
+        List<String> ids = config.getPanelsID();
+        for(String i: ids){
+            PanelConfig panelConfig = (PanelConfig) ConvertorBoot.configContainer.get(i);
+            Panel panel = (Panel) ConvertorBoot.instanceContainer.get(i);
+            panel.setPreferredSize(new Dimension(panel.getWidth(),panel.getHeight()));
+            for(String j:panelConfig.getComponentsID()){
+                initComponent((ComponentConfig) ConvertorBoot.configContainer.get(j),panel);
             }
-            add(panel,i.getAlign());
+            add(panel,panelConfig.getAlign());
             
         }
         logger = new Logger() {
@@ -254,7 +244,7 @@ public class ConvertorFrame extends JFrame{
         converController.setLogger(logger);
         initFrame();
         setDefaultCloseOperation(3);
-        setSize(WIDTH, HEIGHT);
+        setSize(config.getWidth(), config.getHeight());
         setVisible(true);
 
     }

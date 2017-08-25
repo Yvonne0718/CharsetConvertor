@@ -29,11 +29,11 @@ import ui.ConvertorFrame;
 public class ChooseFileListener implements ActionListener {
     private ConvertorFrame frame;
     private ConvertController converController;
-    private JButton button;
+//    private JButton button;
     private JTextField field;
-    public ChooseFileListener(Object frame,Object button,JTextField field){
+    public ChooseFileListener(Object frame,JTextField field){
         this.frame = (ConvertorFrame) frame;
-        this.button = (JButton) button;
+//        this.button = (JButton) button;
         this.field = field;
         this.converController = ConvertController.getInstence();
     }

@@ -26,10 +26,10 @@ import ui.ConvertorFrame;
  */
 public class TgDirectoryListener implements FocusListener,ActionListener{
     private JTextField field;
-    private ConvertorFrame frame;
+//    private ConvertorFrame frame;
     private ConvertController converController;
-    public TgDirectoryListener(Object frame,Object field){
-        this.frame = (ConvertorFrame) frame;
+    public TgDirectoryListener(Object field){
+//        this.frame = (ConvertorFrame) frame;
         this.field = (JTextField) field;
         this.converController = ConvertController.getInstence();
     }

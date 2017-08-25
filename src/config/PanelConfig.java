@@ -1,8 +1,11 @@
 package config;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.dom4j.Element;
+
+import ui.ConvertorBoot;
 
 public class PanelConfig extends BaseUIConfig{
     private String align;
@@ -10,7 +13,8 @@ public class PanelConfig extends BaseUIConfig{
 //    private List<BoxConfig> boxsConfig;
 //	private List<ButtonConfig> buttonsConfig;
 //	private List<TextFieldConfig> textFieldsConfig;
-    private List<ComponentConfig> componentConfig;
+//    private Map<String,ComponentConfig> componentConfig;
+    private List<String> componentsID = new ArrayList<String>();
 	
 	@SuppressWarnings("unchecked")
     public PanelConfig(Element panel) {
@@ -18,7 +22,11 @@ public class PanelConfig extends BaseUIConfig{
 	    this.align = panel.attributeValue("align");
 	    List<Element> components = panel.elements("JComponent");
 	    for(Element i : components){
-	        componentConfig.add(new ComponentConfig(i));
+	        String id = i.attributeValue("id");
+	        ComponentConfig config = new ComponentConfig(i);
+//	        componentConfig.put(id, config);
+	        this.componentsID.add(id);
+	        ConvertorBoot.configContainer.put(id, config);
 	    }
 //	    List<Element> labels = panel.elements("JLabel");
 //	    List<Element> buttons = panel.elements("JButton");
@@ -43,11 +51,14 @@ public class PanelConfig extends BaseUIConfig{
 	}
 
     /**
-     * @return the componentConfig
+     * @return the componentsID
      */
-    public List<ComponentConfig> getComponentConfig() {
-        return componentConfig;
+    public List<String> getComponentsID() {
+        return componentsID;
     }
+
+
+
 	
 	
 //

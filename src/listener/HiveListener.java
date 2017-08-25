@@ -23,12 +23,12 @@ import ui.ConvertorFrame;
  *
  */
 public class HiveListener implements ActionListener{
-    private ConvertorFrame frame;
+//    private ConvertorFrame frame;
     private ConvertController converController;
     private JCheckBox box;
     
-    public HiveListener(Object frame, Object box){
-        this.frame = (ConvertorFrame) frame;
+    public HiveListener(Object box){
+//        this.frame = (ConvertorFrame) frame;
         this.box = (JCheckBox) box;
         this.converController = ConvertController.getInstence();
     }

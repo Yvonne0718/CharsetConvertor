@@ -25,11 +25,11 @@ import ui.ConvertorFrame;
  */
 public class TgTypeListener implements FocusListener {
     private JTextField field;
-    private ConvertorFrame frame;
+//    private ConvertorFrame frame;
     private ConvertController converController;
 
-    public TgTypeListener(Object frame,Object field){
-        this.frame = (ConvertorFrame) frame;
+    public TgTypeListener(Object field){
+//        this.frame = (ConvertorFrame) frame;
         this.field = (JTextField) field;
         this.converController = ConvertController.getInstence();
     }

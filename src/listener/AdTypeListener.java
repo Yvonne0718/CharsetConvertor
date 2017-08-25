@@ -24,11 +24,11 @@ import ui.ConvertorFrame;
  */
 public class AdTypeListener implements FocusListener {
     private JTextField field;
-    private ConvertorFrame frame;
+//    private ConvertorFrame frame;
     private ConvertController converController;
 
-    public AdTypeListener(Object frame,Object field){
-        this.frame = (ConvertorFrame) frame;
+    public AdTypeListener(Object field){
+//        this.frame = (ConvertorFrame) frame;
         this.field = (JTextField) field;
         this.converController = ConvertController.getInstence();
     }

@@ -25,14 +25,14 @@ import ui.ConvertorFrame;
 public class CharsetListener implements ActionListener {
 
     private JComboBox combobox;
-    private ConvertorFrame frame;
+//    private ConvertorFrame frame;
     private ConvertController converController;
     /**
      * 
      */
-    public CharsetListener(Object frame, Object combobox) {
+    public CharsetListener(Object combobox) {
         this.combobox = (JComboBox) combobox;
-        this.frame = (ConvertorFrame) frame;
+//        this.frame = (ConvertorFrame) frame;
         this.converController = ConvertController.getInstence();
     }
     /* 
