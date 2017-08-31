@@ -284,7 +284,6 @@ public class ConvertorFrame extends JFrame implements ActionListener, FocusListe
             jfc.setApproveButtonText("确定");
             jfc.showOpenDialog(this);
             // TODO 记住用户选择的文件
-            jfc.changeToParentDirectory();
             File[] files = jfc.getSelectedFiles();
             this.converController.setTempFile(files);
             if (files.length != 0) {// 等于一个的时候可能是一个文件夹也可能是一个文件
