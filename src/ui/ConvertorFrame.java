@@ -251,7 +251,7 @@ public class ConvertorFrame extends JFrame implements ActionListener, FocusListe
         .append("    文件的后缀 \"txt\",若有多种需要过滤的格式则使用逗号\",\"隔开\n")
         .append(" 4. 输入目标文件格式（可选）。和过滤文件类型的要求一样\n")
         .append(" 5. 选择是否过滤以 \".\"作为文件名开头的隐藏文件\n")
-        .append(" 6. 点击\"开始转换\");");
+        .append(" 6. 点击\"开始转换\");\n");
         return helpMessage.toString();
     }
 
